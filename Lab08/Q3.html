@@ -1,0 +1,101 @@
+<html>
+
+<head><title>Lab 8</title>
+
+<script type="text/javascript">
+
+function input(){
+
+var revname=document.theform.receiver.value;
+var message=document.theform.messagebox.value;
+var peakvalue=parseInt(document.theform.peak_select.value);
+
+var result_getrate=get_rate(peakvalue);
+var rate=result_getrate[0];
+var peakstate=result_getrate[1];
+
+
+
+
+var bill=Math.ceil(message.length/10)*rate;
+
+display_bill(revname,message,peakstate,rate,bill);
+}
+
+function get_rate(peakvalue){
+var rate ,peakstate;
+
+switch(peakvalue){
+	case 1:
+		peakstate="YES";
+	rate=0.03;
+	break;
+	case 2:
+	peakstate="NO";
+	rate=0.01;
+	break;
+	
+}
+return[rate,peakstate] ;
+}
+
+function display_bill(revname,message,peakstate,rate,bill)
+{
+	document.getElementById("display").innerHTML=
+	("TO:" +revname
+	+"<br>YOUR MESSAGE:"+message
+	+"<br>PEAK HOUR:"+peakstate
+	+"<br>RATE:RM "+rate.toFixed(2)
+	+"<br>PAYMENT:RM"+bill.toFixed(2)
+
+	);
+}
+
+
+
+
+
+
+</script>
+
+</head>
+
+<body>
+
+<form name="theform">
+
+<p >TO:<input type="text" name="receiver"></p>
+<br>
+<p>Message:<br><textarea name="messagebox" rows="3" ></textarea></p>
+
+<p>Peak Hour:
+<input name=peak_select type="radio" value="1" >YES;
+<input  name=peak_select type="radio" value="2" >NO;
+</p>
+
+<p><input type="button" value="GET BILL" onclick="input()"></p>
+
+
+</form>
+<p id="display"></p>
+
+
+</body>
+
+</html>
+<!--<form name="bill">
+
+<p>To : <input type="text" name="receiver" /></p>
+
+<p>Message :
+<br> <textarea name="message" rows="3" cols="50"></textarea></p>
+
+<p>Peak Hour : 
+	<input type="radio" name="hour" value="Yes" /> Yes
+	<input type="radio" name="hour" value="No" /> No
+</p>
+
+<p><input type="button" name="submitbtn" value="Get Bill" onclick="input()" /></p>
+
+
+</form> 	-->

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>JavaScript</title>
+
+<style type="text/css">
+
+span {color:red }
+
+</style>
+
+<script type="text/javascript">
+
+function menu()
+{
+	var foodprice=0,drickprice=0;
+	var fooddata=document.menufrm.food.value;
+	var drinkdata=document.menufrm.drinks.value;
+
+	switch(fooddata){
+		case 'Chicken Rice':
+			foodprice=5;
+			break;
+			case 'Nasi Lemak':
+			foodprice=2;
+			break;
+			case 'Noodles':
+			foodprice=4;
+			break;
+	}
+	switch(drinkdata){
+		case 'Lemon Tea':
+			drinkprice=5;
+			break;
+			case 'Hot Milo':
+			drinkprice=2;
+			break;
+			case 'Iced Coffee':
+			drinkprice=4;
+			break;
+	}
+	var totalprice=foodprice+drinkprice;
+document.getElementById('total').innerHTML=totalprice.toFixed(2);
+document.getElementById("food_price").innerHTML=foodprice.toFixed(2);
+document.getElementById("drinks_price").innerHTML=drinkprice.toFixed(2);
+}
+
+
+</script>
+
+</head>
+
+<body>
+
+<form name="menufrm">
+
+	<p>Food : 	<select name = "food" onchange="menu();">
+					<option value="Noodles">Noodles</option>
+					<option value="Nasi Lemak">Nasi Lemak</option>
+					<option value="Chicken Rice">Chicken Rice</option>
+				</select>
+				<span id="food_price">0.00</span>
+				
+	<p>Drinks : 	<select name = "drinks" onchange="menu();">
+					<option value="Iced Coffee">Iced Coffee</option>
+					<option value="Hot Milo">Hot Milo</option>
+					<option value="Lemon Tea">Lemon Tea</option>
+				</select>
+				<span id="drinks_price">0.00</span>
+				
+	<p id="total">0.00</p>
+
+</form>
+
+
+
+</body>
+
+</html>

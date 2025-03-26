@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>JS FORMS</title>
+ 
+<script type="text/javascript">
+
+function check()
+{
+	var qty=parseInt(document.orderfrm.qty.value);
+	var item=document.orderfrm.product_code.value;
+	var valid=true;
+	
+	if(qty==""|| isNaN(qty)){
+		document.getElementById('qty-display').innerHTML="Please enter a valid quantity";
+		valid=false;
+	}else{
+		document.getElementById('qty-display').innerHTML="";
+	}
+	
+	if(item=="0"){
+		document.getElementById('price-display').innerHTML="Please select an item";
+		valid=false;
+	}else{
+		document.getElementById('price-display').innerHTML="";
+	}
+	
+	var prod_name, price;
+	switch(item){
+		case "1":
+			prod_name="Pen";
+			price=1.20;
+			break;
+		case "2":
+			prod_name="Eraser";
+			price=0.3;
+			break;
+		case "3":
+			prod_name="Ruler";
+			price=0.5;
+			break;
+	}
+	
+	if(valid){
+		get_bill(qty, prod_name, price);
+	}
+}
+
+function get_bill(qty, product_name, product_price)
+{
+	var total = qty * product_price;
+	document.getElementById('bill').innerHTML="<br>Product:" + product_name + "<br>Price:RM " + product_price.toFixed(2)+ "<br>Bill:RM " + total.toFixed(2);
+}
+
+
+</script> 
+
+
+
+</head>
+
+<body>
+
+<form name = "orderfrm" >
+
+	<p>Quantity : 	<input type="text" name="qty" size="10" />
+	<br><span id="qty-display">&nbsp;</span>
+	</p>	
+	
+	<p>Operation : 	<select name="product_code" >
+						<option value="0">Choose an item</option>
+						<option value="1">Pen</option>
+						<option value="2">Eraser</option>
+						<option value="3">Ruler</option>
+					</select>
+		<br><span id="price-display">&nbsp;</span>
+	</p>
+
+	<p><input type="button" value="Get Bill" name="calcbtn" onclick = "check()" /></p>
+	
+</form>
+
+<p id="bill">&nbsp;</p>
+
+</body>
+
+</html>

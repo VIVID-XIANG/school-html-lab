@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head><title>Lab 7</title>
+
+<script type="text/javascript">
+choic=parseInt (prompt("please enter  you choice:\n 1. nesvafe \n 2.pizza \n 3.yogurt"));
+if(choic>="1"&&choic<="3"){
+switch(choic){
+    case 1:qty=parseInt(prompt("How many cans?"));price=2.3;break;
+    case 2:qty=parseInt(prompt("How many pieces?"));price=7.9;break;
+    case 3:qty=parseInt(prompt("How many cups?"));price=1.85;break;
+}
+
+}
+else{
+alert("Invalid Choice.Program will terminate");
+}
+bill=qty*price;
+document.write(bill ="RM"+bill.toFixed(2));//2decimel
+</script>
+
+</head>
+
+<body>
+
+
+</body>
+
+</html>

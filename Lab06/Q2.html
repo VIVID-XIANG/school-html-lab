@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head><title>Lab 6</title>
+
+<style type="text/css">
+*{font-family: Verdana;}
+
+h3{
+	color:green;
+}
+
+fieldset{
+	width: 600px;
+	border: 2px red solid;
+	box-shadow: #2e4de8 5px 3px 5px;/*right down vague*/
+}
+label{
+	float: left;
+	width: 150px;
+	text-align: right;
+	font-size: 0.8em;
+	color: blue;
+	font-weight: bold;
+}
+label .hint{
+	border: 1px solid ;
+	font-size: 0.7em;
+	color: rgb(238, 3, 3);
+	font-weight: normal;
+	margin-right: 5px;
+}
+input[type=text],[type=email],textarea{
+	border: 1px solid rgb(160, 143, 143);
+	height: 20px ;
+	padding: 5px 15px;
+}
+input[type="text"],
+input[type="email"],
+textarea {
+  border: 1px solid   rgb(19, 19, 120)/* Default border for all states */
+   /* Ensure border is included in width calculations */
+}
+input[type=submit],[type=reset]{
+background-color: orange;
+width: 100px;
+border: 1px orange;
+padding: 10px 20px;
+}
+input[type=submit]:hover,[type=reset]:hover{
+	cursor: pointer	;
+	opacity: 0.6;/*mouse goes over the buttons BECOMES opacity*/
+	;
+}
+</style>
+
+</head>
+
+<body>
+
+<h3>CONTACT US</h3>
+
+<p style="font-style: italic;">Please fill up the information below.</p>
+
+<form name="feedbackfrm">
+	<fieldset>
+		<label>Name <br><span class="hint">Your full name</span></label>
+		<input type="text" name="guest_name" />
+		<br><br>
+		<label>Email Address <br><span class="hint">Your current email address</span></label>
+		<input type="email" name="guest_email" />	
+		<br><br>
+		<label>Feedback <br><span class="hint">Key-in your feedback</span></label>
+		<textarea name="guest_feedback" rows="3" cols="40"></textarea>	
+		<br><br>
+		<input type="submit" name="submitbtn" value="Send" />
+		<input type="reset" name="resetbtn" value="Cancel" />
+	</fieldset>		
+</form>
+	
+
+
+<p style="color: #bbb;font-size: 0.7em;">All information will be treated as private and confidential</p>
+
+</body>
+
+</html>

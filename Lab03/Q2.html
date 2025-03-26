@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sales report</title>
+</head>
+<body>
+    <!--Refer to your Lab Question and write your answer here-->
+    <h4>Best Sellers</h4>
+    <form action="" >
+<P>search reports based on the fllowing criterias</P>
+<hr/>
+<p>Start date <INPUT type="date" min="2017-01-01" max="2017-12-31" name="STRTDATE"></p>
+<P>End date <input type="date" min="2017-01-01" max="2017-12-31" name="ENDATE"></P>
+<p>Order status</p>
+    <select name="Orderstatus" >
+    <option value="ALL" selected>ALL</option>
+    <option VALUE="PDG"disabled>PENDING</option>
+    <option value="PROCESSING">PROCESSING</option>
+    <option value="COM">COMPLETE</option>
+    <option value="CANCELLED">CANCELLED</option>
+    </select>
+
+<P>PAYMENT STATUS:<br>
+    <select NAME="PAYMENTstatus" size="3" multiple>
+        <option value="PENDING">pending</option>
+        <option value="authorised">authorised</option>
+        <option value="paid">paid</option>
+        <option value="partially">partially refunded</option>
+        <option value="refunded">refunded</option>
+        <option value="voided">voided</option>
+
+
+
+    </select>
+</P>
+<input type="submit" value="RUN report"></button>
+
+</form>
+
+</body>
+</html>

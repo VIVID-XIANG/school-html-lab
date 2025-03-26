@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head><title>Lab 7</title>
+
+<script type="text/javascript">
+var total=0;
+var i=0;
+do{
+
+var weight=parseFloat(prompt("Enter the weight of your materials"));
+if(weight<1 || isNaN(weight)){
+    alert("Invalid weight entered. Please enter a valid weight.");
+    continue;
+}
+
+if(weight<=10){
+    rate=0.15;
+}else if(weight>10 &&weight<=20){
+    rate=0.2;
+}else if(weight>20 &&weight<=30){
+    rate=0.25;
+}else if(weight>30 ){
+    rate=0.30;
+} 
+var payout=0;
+payout=weight*rate;
+total+=payout;
+
+i++;
+document.write("Customer:"+i+"<br>Weight:"+weight+"KG"
++"<br>Rate:RM"+rate
++"<br>Payout:RM"+payout.toFixed(2)
++"<br><br>"
+
+);
+
+
+ctn=confirm("DO YOU HAVE ANY MATERIALS TO RECYCLE?");
+
+}while(ctn);
+
+document.write(
+"TOTAL CUSTOMER :"+i
++"<br>Overall payout:RM"+total.toFixed(2)
+
+
+
+);
+
+
+
+
+</script>
+
+</head>
+
+<body>
+
+
+</body>
+
+</html>

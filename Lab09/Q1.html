@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>JS FORMS</title>
+ 
+<script type="text/javascript">
+
+function validate()
+{
+	var num1,num2,opt;
+	var valid=true;
+	num1=parseFloat(document.mathfrm.num1.value);
+	num2=parseFloat(document.mathfrm.num2.value);
+	
+	for(i=0;i<document.mathfrm.mathopt.length;i++){
+		if(document.mathfrm.mathopt[i].checked){
+			opt=document.mathfrm.mathopt[i].value;
+		}
+	}
+
+	if(isNaN(num1) || num1==""){ 
+		document.getElementById('err_num1').innerHTML="Please enter a valid number";										
+		valid=false;
+	}else{
+		document.getElementById('err_num1').innerHTML="";}
+
+	if(isNaN(num2) || num2==""){ 
+		document.getElementById('err_num2').innerHTML="Please enter a valid number";										
+		valid=false;
+	}else{
+		document.getElementById('err_num2').innerHTML="";}
+
+	if(opt==undefined){ 
+		document.getElementById('err_opt').innerHTML="Please select an operation";										
+		valid=false;
+	}else{
+		document.getElementById('err_opt').innerHTML="";}
+
+	if(valid){
+		calculate(num1, num2, opt);
+	}
+}
+
+function calculate(number1, number2, mopt)
+{
+	var result;
+	switch(mopt){
+		case"+":result=number1+number2;
+		break;
+		case"-":result=number1-number2;
+		break;
+		case"*":result=number1*number2;
+		break;
+	}
+	document.getElementById('result').innerHTML="Result: " + result;
+}
+
+
+</script> 
+
+
+
+</head>
+
+<body>
+
+<form name = "mathfrm" >
+
+	<p>Number 1 : 	<input type="text" name="num1" size="20" />
+	<br><span id="err_num1" style="font-size:0.8em; color:red">&nbsp;</span>
+	</p>	
+	
+	<p>Number 2 : <input type="text" name="num2" size="20" />
+	<br><span id="err_num2" style="font-size:0.8em; color:red">&nbsp;</span>
+	</p>
+	
+	<p>Operation : 	<input type="radio" name="mathopt" value="+" /> +
+					<input type="radio" name="mathopt" value="-" /> -
+					<input type="radio" name="mathopt" value="*" /> &times;
+		<br><span id="err_opt" style="font-size:0.8em; color:red">&nbsp;</span>
+	</p>
+
+	<p><input type="button" value="Calculate" name="calcbtn" onclick = "validate();" /></p>
+	
+</form>
+
+<p id="result">&nbsp;</p>
+
+</body>
+
+</html>

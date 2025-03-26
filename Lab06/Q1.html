@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head><title>Lab 6</title>
+
+<style type="text/css">
+	#login-title{
+		height: 40px;
+		background-color: rgb(240, 236, 236);
+		background-image: url(image/padlock.png);
+		background-repeat: no-repeat;
+		background-position: 7px 7px;
+		background-size: 24px 24px;
+	}
+
+#login-form{
+	padding: 10px;
+	text-align: center;
+	
+}
+#login-form input[type=email],[type=password]{
+width: 250px;
+height: 25px;
+border: 1px solid rgb(227, 214, 214);
+border-radius: 5px;
+padding:5px 10px 5px 40px ;/*TRBL 字与格子的距离*/
+}
+input[type=email]{
+	background-image: url(image/email.png);
+	background-repeat: no-repeat;
+	background-position: 10px 10px;
+}
+
+input[type=password]{
+	background-image: url(image/key.png);
+	background-repeat: no-repeat;
+	background-position: 10px 10px;
+}
+
+#login-form input[type=submit]{
+	background-color: #0066ff;
+	color: white;
+	width: 300px;
+	padding: 10px;
+	border: none;
+}
+#login-form input[type=submit]:hover{
+	background-color: #0066ff;
+cursor: pointer;
+}
+#login-form p a {
+	text-decoration: none;
+	font-family: 'arial narrow';
+	font-size: 0.8em;
+	text-align: center;
+}
+
+#login-form p a:hover {
+	font-style: italic;
+	color: red;
+
+}
+</style>
+
+</head>
+
+<body>
+
+<div style="width: 400px;padding: 0px;  margin: auto;border: 1px solid white;border-radius: 10px;">
+
+	<div id="login-title">
+		<h4 style="color: rgb(9, 9, 235);font-family: arial;margin: 0px;padding: 12px 40px 12px 40px;">Login Panel</h4>
+	</div>
+	
+	<div id="login-form">
+		<form name="loginfrm">
+			<p><input type="email" name="user_email" /></p>
+			<p><input type="password" name="user_password" /></p>
+			<p><input type="submit" name="loginbtn" value="LOGIN" /></p>
+		</form>
+		
+		<p><a href="#">Forgot your password?</a></p>
+		
+	</div>
+	
+	
+</div>
+
+
+</body>
+
+</html>

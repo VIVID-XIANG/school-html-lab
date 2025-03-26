@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign up</title>
+</head>
+<body>
+    <!--Refer to your Lab Question and write your answer here-->
+   <FROM ACCTION="signup.php" name="frmsignup">
+    <h4>REGISTER FOR NEW ACCOUNT</h4>
+<p>name: <input type="text" name="txtName" size="50" maxlength="55" placeholder="TYPE YOUR NAME HERE"></p>
+  
+<P>PASSWORD:<input type="password" name="txtpwd"></P>
+<p>email:<input type="email" ></p>
+<p><input type="submit"></p>
+
+<p>ACCOUNT TYPE:
+<!--if name is same thay can choice one only-->
+    <INPUT type="radio" NAME="radacc" value="member">member
+        <INPUT type="radio" NAME="radacc" value="retailer">retailer
+ </p>
+    <p>IF YOU ARE A RETAILER ,DESCRIBE YOUR BUSINESS:<BR>
+        <textarea NAME="TXTDESC" placeholder="WRITE YOUR DESCRIPTIONS HERE...." rows="4" cols="60" >
+        </textarea>
+    </p>
+<P>Your birthday:<input type="date" name ="txtdob" max="2000-12-12"></P>
+
+<P>how did your hear about us?
+    <!--c-->
+    <input type="checkbox" name="chkavountus" value="SE">search engine
+    <input type="checkbox" name="chkavountus" vslue="FB">facebook
+    <input type="checkbox" name="chkavountus" value="frds">friends
+    <input type="checkbox" name="chkavountus" value="oths">others
+</P>
+<p><input type="submit" name="btnsubmit" value="sign up"></p>
+</FROM>
+
+    
+
+
+
+
+
+</body>
+</html>

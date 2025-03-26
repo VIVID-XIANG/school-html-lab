@@ -1,0 +1,45 @@
+@font-face {
+    font-family:GenghisKhan ;
+    src: url(font/GenghisKhanframed-MedObliq.ttf);
+}
+@font-face {
+    font-family:BLACLIST ;
+    src: url(font/TheBlacklist.ttf);
+    
+}
+
+body{
+    background-image: url(Image/background.jpg);
+    background-size: 200px;
+    
+}
+H1{
+font-family: GenghisKhan;
+FONT: SIZE 2em;
+color: darkgreen;
+letter-spacing: 5px;
+text-align: center;
+}
+H4{
+    font-family: BLACLIST;
+    FONT: SIZE 2em;
+    color: rgb(240, 243, 237);
+    background-color: greenyellow;
+    letter-spacing: 5px;
+    text-shadow:12px 2px rgb(50, 83, 17);}
+   P{font-style: italic;
+    }
+    .labels{
+        font-weight: bold;
+        color:blue;
+    }
+
+    #old-price{
+        font-style: normal;
+        text-decoration:  line-through;
+    }
+    #new-price{
+        font-style: normal;
+        color: red;
+        text-decoration: underline;
+    }

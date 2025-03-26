@@ -1,0 +1,44 @@
+*{
+    margin: auto;
+    padding: 10px;
+}
+
+#wrapper{
+    width:780;
+    background-color: #eff2ef ;
+    border: 1px solid;
+    text-align:center;
+    overflow: auto;
+
+}
+#wrapper h3{
+    font-family: verdana;
+}
+
+.col-content{
+float:left;
+margin-left: 15px;
+width: 230px;
+background-color: white;
+}
+
+.col-content h4{
+    color: #e02634;
+    font-family: tahoma;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

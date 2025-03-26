@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab 8</title>
+    <script type="text/javascript">
+        function order_data() {
+            var cust_name = document.orderfrm.nametxt.value;
+            var qty = document.orderfrm.qtytxt.value;
+            var color = getSelectedColor();
+            var price = getPrice(color);
+            var bill = qty * price;
+            var isDelivery = document.orderfrm.mug_delivery.checked? "Yes" : "No";
+            var delivery_charge = isDelivery === "Yes"? 7.00 : 0.00;
+            printBill(cust_name, price, qty, bill, isDelivery, delivery_charge);
+        }
+
+        function getSelectedColor() {
+            for (var i = 0; i < document.orderfrm.mug_colour.length; i++) {
+                if (document.orderfrm.mug_colour[i].checked) {
+                    return document.orderfrm.mug_colour[i].value;
+                }
+            }
+        }
+
+        function getPrice(color) {
+            switch (color) {
+                case "1":
+                    return 3.50;
+                case "2":
+                    return 5.90;
+                case "3":
+                    return 7.50;
+                default:
+                    return 0.00;
+            }
+        }
+
+        function printBill(n, p, q, b, i, d) {
+            var billElement = document.getElementById("bill");
+            billElement.innerHTML = "";
+            billElement.innerHTML += "<br>Customer Name: " + n;
+            billElement.innerHTML += "<br>Mug Price: RM " + p.toFixed(2);
+            billElement.innerHTML += "<br>Quantity: " + q;
+            billElement.innerHTML += "<br>Delivery: " + i + " (RM " + d.toFixed(2) + ")";
+            billElement.innerHTML += "<br>Total: RM " + (b + d).toFixed(2);
+        }
+    </script>
+</head>
+
+<body>
+    <h3>Custom Mug</h3>
+    <p>Make a custom order today!</p>
+
+    <form name="orderfrm">
+        <p>Name: <input type="text" name="nametxt"></p>
+        <p>Colour
+            <input type="radio" name="mug_colour" value="1">Royal Blue (RM 3.50)
+            <input type="radio" name="mug_colour" value="2">Red and Orange (RM 5.90)
+            <input type="radio" name="mug_colour" value="3">Gold (RM 7.50)
+        </p>
+        <p>Quantity: <input type="text" name="qtytxt"></p>
+        <p>Delivery: <input type="checkbox" name="mug_delivery" value="Yes">Check if delivery is required</p>
+        <p><input type="button" name="sendbtn" value="Send Order" onclick="order_data();"></p>
+    </form>
+
+    <div id="bill"></div>
+
+</body>
+</html>

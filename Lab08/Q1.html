@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head><title>Lab 8</title>
+
+<script>
+
+function get_input()
+{
+	gram=parseFloat(document.convertfrm.gramtxt.value);//float
+	unit=document.convertfrm.unittxt.value;
+	if(unit=='A'){
+		choice="kilograms";
+		convert_kilogram(gram);//refre to this function
+	}
+	else if (unit=='B'){
+		choice="pounds";
+		convert_pound(gram);
+	}
+}
+
+function convert_kilogram(grams)
+{
+	kg=grams*0.001;
+	document.write(grams+"grams=" +kg +choice)//("grams=kilograms") choice from get_input
+}
+
+
+function convert_pound(grams)
+{
+	var pounds = grams * 0.0022;
+            document.write(grams + " grams = " + pounds + " " + choice);
+}
+
+
+
+</script>
+
+</head>
+
+<body>
+
+<form name="convertfrm">
+	<p>Enter a value in grams : <input type="text" name="gramtxt" /></p>
+	<p>Convert to :
+		<select name="unittxt">
+			<option value="A">Kilogram</option>
+			<option value="B">Pound</option>
+		</select>
+	</p>
+	<p><input type="button" name="convertbtn" value="Convert Now" onclick="get_input();" /></p>
+</form>
+
+</body>
+
+</html>

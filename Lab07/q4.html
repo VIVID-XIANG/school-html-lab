@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head><title>Lab 7</title>
+
+<script type="text/javascript">
+var ptcp,dis,gift,coursename;
+var ans=prompt("COURES OFFERED \n A.Windows Azure (RM 1250 PER PAX)\n B.JQuery for Beginners(RM 990 PER PAX)\nC.Advanced PHP and MySQL (RM 2150 per pax)");
+var totalprice=0,disprice=0,price=0;
+if(ans.toUpperCase()>='A' && ans.toUpperCase()<='C'){
+
+switch(ans.toUpperCase()){
+    case 'A':
+       ptcp=parseInt(prompt("enter number of participants:")); 
+        price=1250;
+        coursename="WINDOW AZURE";
+        break;
+    case 'B':
+    ptcp=parseInt(prompt("enter number of participants:")) ;
+        price=990;
+        coursename="JQuery";
+        break;
+    case 'C':
+    ptcp=parseInt(prompt("enter number of participants:")) ;
+        price=2150;
+        coursename="PHP AND SQL";
+     break;
+}
+if(ptcp<=10)
+{
+    dis=0;
+    gift="NONE";
+}else if(ptcp>10 && ptcp<=20){
+    dis=0.1;
+    gift="COFFE MUG";
+}else if(ptcp>20){
+    dis=15/100;
+    gift="KINGSTON 16GB THUMDRIVE";
+}
+
+}else{
+    alert("INVALID!!!!!!");
+}
+disprice=price-price*dis;
+totalprice=ptcp*disprice;
+//in document.write only can use <br>
+document.write(
+"COURSE NAME:"+coursename 
++"<br>course price:RM"+price.toFixed(2) 
++"<br>PARTICIPANTS:"+ptcp
++"<br>Discount:RM"+(price*dis).toFixed(2)+"( "+(dis*100).toFixed(2)+"%)"
++"<br>GIFT:"+gift
++"<br>TOTAL PAYMENT:RM"+totalprice.toFixed(2)
+
+);
+
+
+
+
+
+
+</script>
+
+</head>
+
+<body>
+
+
+</body>
+
+</html>

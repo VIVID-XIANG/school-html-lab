@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lab 7</title>
+</head>
+<body>
+  <script type="text/javascript">
+    var total = 0;
+    do {
+      var b1 = parseFloat(window.prompt("Please enter the value of base 1"));
+      var b2 = parseFloat(window.prompt("Please enter the value of base 2"));
+      var h = parseFloat(window.prompt("Please enter the value of height"));
+
+      if (isNaN(b1) || isNaN(b2) || isNaN(h)) {
+        alert("Invalid input. Please enter a valid number.");
+        continue;
+      }
+
+      var area = 0.5 * h * (b1 + b2);
+      total += area;
+      document.write("The area of the trapezoid is " + area + " cm <br>");
+
+      var isCont = confirm("Do you want to continue?");
+    } while (isCont);
+    document.write("<p>The total area of the trapezoids is " + total + " cm</p>");
+  </script>
+</body>
+</html>
